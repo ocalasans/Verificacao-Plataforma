@@ -1,2 +1,7 @@
 # Verificacao-de-Plataforma
-Essa verificação é um sistema para identificar se o jogador está no Android e também pode ser usado para identificar se ele está no PC
+
+Olá, bom gente esse um sistema que vai identificar se o jogador está jogando pelo celular ou se está pelo PC, assim que o jogador se conectar no servidor ele vai ser verificado nem todos os servidores tem esse sistema é um ótimo sistema para se usar já que ele faz a verificação automaticamente quando eu achei esse sistema ele estava bastante bugado, quem fez essa include foi o Jekmant eu apenas otimizei e mudei algumas coisas que estava bugada, é importante que você leiam o README.md que está dentro do arquivo .zip lá tem outros códigos que podem te ajudar.
+
+* Leia o arquivo "README.md" que está com o Gamemode é importante.
+
+Atenciosamente, Walkerxinho7
