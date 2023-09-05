@@ -15,7 +15,7 @@ Ex: o inventário de Android vai ser em dialog e o inventário de PC vai ser em 
 então tem alguns servidores que usa esse Ex de variável. lembrando não estou falando
 que se você ter essa variável vai ter a dialog ou textdraw é claro que você tem que criar
 o código.
-```
+
 public OnPlayerSpawn(playerid)
 {
     if(PlayerAndroidInfo[playerid][TaNoAndroid] == true)
@@ -38,7 +38,7 @@ public OnPlayerSpawn(playerid)
     }
     return 1;
 }
-```
+
 Para ativar no seu Gamemode basta digitar no topo do Gamemode
                ↓
 #include <IdentificarPlataforma>
