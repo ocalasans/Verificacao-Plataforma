@@ -1,8 +1,15 @@
-//Esta include foi feita inicialmente por Jekmant
+//Esta include foi feita inicialmente por Jekmant.
 
 /*
-    Atualizado & otimizado by Walkerxinho7
+        Include atualizado & otimizado por Walkerxinho7.
+
+        Discord: walkerxinho7 ou Walkerxinho7#9124
+        Youtube: Walkerxinho
+        Instagram: ocalasans
 */
+
+#include <a_samp>
+#include <Pawn.RakNet>
 
 #if defined _IdentificarPlataforma_included
 	#endinput
@@ -13,20 +20,19 @@
     native gpci(playerid, buffer[], size = sizeof(buffer));
 #endif
 
+//Não mexa em nada aqui
 #define TAMANHO_PACOTE     3
 #define CHAVE_ANDROID     "ED40ED0E8089CC44C08EE9580F4C8C44EE8EE990"
 const ID_SINCRONIZACAO_PERS = 221;
 const WK7_INICIAR_ANDROID = 0x10;
 
-//Não mexa em nada aqui
 enum PlayerAndroid
 {
     bool:TaNoAndroid,
     bool:MiraAutomatica
 }
-//
 new PlayerAndroidInfo[MAX_PLAYERS][PlayerAndroid];
-
+//
 public OnPlayerConnect(playerid)
 {
     new string[64];
