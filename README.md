@@ -2,7 +2,7 @@
 
 Este é um include que tem a função de verificar se o jogador está usando um `mobile` ou um `computador`. Leia as categorias abaixo para se manter informado.
 
-English > [README](https://github.com/Walkerxinho7/Verificacao-Plataforma/blob/main/README.eng.md).
+English > [README](https://github.com/ocalasans/Verificacao-Plataforma/blob/main/README.eng.md).
 
 -----------------------
 
@@ -91,6 +91,6 @@ CMD:mira(playerid)
 ### Informações de contato
 
 Instagram: [ocalasans](https://instagram.com/ocalasans)   
-YouTube: [Walkerxinho](https://www.youtube.com/@walkerxinho)   
-Discord: walkerxinho7 ou Walkerxinho7#9124   
+YouTube: [Calasans](https://www.youtube.com/@ocalasans)   
+Discord: ocalasans   
 Comunidade: [SA:MP Programming Community©](https://abre.ai/samp-spc)
