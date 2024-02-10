@@ -5,10 +5,10 @@
     encontrá-lo na internet. Então, decidi fazer melhorias e disponibilizá-lo para 
     vocês.
 
-    © [2024] [Calasans (Walkerxinho7)]. Todos os direitos reservados.
+    © [2024] [Calasans]. Todos os direitos reservados.
 
-    Discord: walkerxinho7 ou Walkerxinho7#9124
-    Youtube: Walkerxinho
+    Discord: ocalasans
+    Youtube: Calasans
     Instagram: ocalasans
 
     SA:MP Programming Comunnity©: https://abre.ai/samp-spc
@@ -100,7 +100,7 @@ public OnGameModeInit()
     print("||                                                              ||");
     print("||                                                              ||");
     print("||                         By: Jekmant                          ||");
-    print("||               Updated: Calasans (Walkerxinho7)               ||");
+    print("||                      Updated: Calasans                       ||");
     print("||                  Discord: abre.ai/samp-spc                   ||");
     print("||                                                              ||");
     print("||==============================================================||");
