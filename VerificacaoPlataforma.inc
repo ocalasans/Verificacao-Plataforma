@@ -182,7 +182,7 @@ $$ |   \$$$$$$  |$$ |  $$ |\$$$$$$$\ \$$$$$$  |\$$$$$$$\ $$$$$$$  |      $$ |   
 stock bool:IsPlayerAndroid(playerid)
     return VPI_player_android[playerid][VPI_Android];
 //
-stock bool:PlayerHaveAutoAim(playerid)
+stock bool:PlayerHasAutoAim(playerid)
     return VPI_player_android[playerid][VPI_Mira_Automatica];
 
 /*
