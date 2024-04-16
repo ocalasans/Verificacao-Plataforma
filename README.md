@@ -57,16 +57,16 @@ CMD:plataforma(playerid)
 
 -----------------------
 
-Este include também possui uma função chamada `PlayerHaveAutoAim`. Essa função consiste em verificar se o jogador está com mira automática ou se está sem a mira automática, conhecida como `LockOn`. Abaixo, estão alguns exemplos:
+Este include também possui uma função chamada `PlayerHasAutoAim`. Essa função consiste em verificar se o jogador está com mira automática ou se está sem a mira automática, conhecida como `LockOn`. Abaixo, estão alguns exemplos:
 
 Com o `if`
 ```pawn
 CMD:mira(playerid)
 {
-    if(PlayerHaveAutoAim(playerid))
+    if(PlayerHasAutoAim(playerid))
         SendClientMessage(playerid, 0xFFFFFFFF, "Sua mira automatica esta Ativada.");
     //
-    else if(!PlayerHaveAutoAim(playerid)) // Pode ser somente else.
+    else if(!PlayerHasAutoAim(playerid)) // Pode ser somente else.
         SendClientMessage(playerid, 0xFFFFFFFF, "Sua mira automatica esta Desativada.");
     //
     return true;
@@ -79,7 +79,7 @@ CMD:mira(playerid)
 {
     new string[128];
     //
-    format(string, sizeof(string), "Sua mira automatica esta %s.", PlayerHaveAutoAim(playerid) ? ("Ativada") : ("Desativada"));
+    format(string, sizeof(string), "Sua mira automatica esta %s.", PlayerHasAutoAim(playerid) ? ("Ativada") : ("Desativada"));
     SendClientMessage(playerid, 0xFFFFFFFF, string);
     //
     return true;
