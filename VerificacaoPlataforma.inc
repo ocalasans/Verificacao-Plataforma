@@ -179,10 +179,10 @@ $$ |   \$$$$$$  |$$ |  $$ |\$$$$$$$\ \$$$$$$  |\$$$$$$$\ $$$$$$$  |      $$ |   
 \__|    \______/ \__|  \__| \_______| \______/  \_______|\_______/       \__|      \__|    \______/ \__|  \__| \_______|   \____/ \__| \______/ \__|  \__|\_______/ 
 */
 
-stock bool:IsPlayerPlataform(playerid)
+stock bool:IsPlayerAndroid(playerid)
     return VPI_player_android[playerid][VPI_Android];
 //
-stock bool:IsPlayerHaveAutoAim(playerid)
+stock bool:PlayerHaveAutoAim(playerid)
     return VPI_player_android[playerid][VPI_Mira_Automatica];
 
 /*

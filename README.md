@@ -26,16 +26,16 @@ Você deve fazer o download do include. Depois de tê-lo feito, você deverá co
 
 ### Como funciona?
 
-Assim que o jogador se conecta ao servidor, o include automaticamente verifica em qual plataforma ele está, seja `mobile` ou `computador`, com a assistência do [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet). Para conferir a plataforma do jogador, basta utilizar a função booleana `IsPlayerPlataform`. Abaixo, estão alguns exemplos:
+Assim que o jogador se conecta ao servidor, o include automaticamente verifica em qual plataforma ele está, seja `mobile` ou `computador`, com a assistência do [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet). Para conferir a plataforma do jogador, basta utilizar a função booleana `IsPlayerAndroid`. Abaixo, estão alguns exemplos:
 
 Com o `if`
 ```pawn
 CMD:plataforma(playerid)
 {
-    if(IsPlayerPlataform(playerid))
+    if(IsPlayerAndroid(playerid))
         SendClientMessage(playerid, 0xFFFFFFFF, "Voce esta conectado pela plataforma Mobile.");
     //
-    else if(!IsPlayerPlataform(playerid)) // Pode ser somente else.
+    else if(!IsPlayerAndroid(playerid)) // Pode ser somente else.
         SendClientMessage(playerid, 0xFFFFFFFF, "Voce esta conectado pela plataforma Computador.");
     //
     return true;
@@ -48,7 +48,7 @@ CMD:plataforma(playerid)
 {
     new string[128];
     //
-    format(string, sizeof(string), "Voce esta conectado pela plataforma %s.", IsPlayerPlataform(playerid) ? ("Mobile") : ("Computador"));
+    format(string, sizeof(string), "Voce esta conectado pela plataforma %s.", IsPlayerAndroid(playerid) ? ("Mobile") : ("Computador"));
     SendClientMessage(playerid, 0xFFFFFFFF, string);
     //
     return true;
@@ -57,16 +57,16 @@ CMD:plataforma(playerid)
 
 -----------------------
 
-Este include também possui uma função chamada `IsPlayerHaveAutoAim`. Essa função consiste em verificar se o jogador está com mira automática ou se está sem a mira automática, conhecida como `LockOn`. Abaixo, estão alguns exemplos:
+Este include também possui uma função chamada `PlayerHaveAutoAim`. Essa função consiste em verificar se o jogador está com mira automática ou se está sem a mira automática, conhecida como `LockOn`. Abaixo, estão alguns exemplos:
 
 Com o `if`
 ```pawn
 CMD:mira(playerid)
 {
-    if(IsPlayerHaveAutoAim(playerid))
+    if(PlayerHaveAutoAim(playerid))
         SendClientMessage(playerid, 0xFFFFFFFF, "Sua mira automatica esta Ativada.");
     //
-    else if(!IsPlayerHaveAutoAim(playerid)) // Pode ser somente else.
+    else if(!PlayerHaveAutoAim(playerid)) // Pode ser somente else.
         SendClientMessage(playerid, 0xFFFFFFFF, "Sua mira automatica esta Desativada.");
     //
     return true;
@@ -79,7 +79,7 @@ CMD:mira(playerid)
 {
     new string[128];
     //
-    format(string, sizeof(string), "Sua mira automatica esta %s.", IsPlayerHaveAutoAim(playerid) ? ("Ativada") : ("Desativada"));
+    format(string, sizeof(string), "Sua mira automatica esta %s.", PlayerHaveAutoAim(playerid) ? ("Ativada") : ("Desativada"));
     SendClientMessage(playerid, 0xFFFFFFFF, string);
     //
     return true;
