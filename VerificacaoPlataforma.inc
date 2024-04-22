@@ -23,15 +23,15 @@
 #endif
 #define _verificacao_plataform_included
 //
-#if !defined _samp_included
-    #error "A biblioteca `a_samp` nao foi ativada. Por favor, ative-a no inicio do seu Gamemode, Ex: `#include <a_samp>`"
+#if !defined _samp_included || !defined _INC_open_mp
+    #error "A biblioteca `a_samp` ou `open.mp` nao foi ativada. Por favor, ative-a no inicio do seu Gamemode, Ex: `#include <a_samp>`"
 #endif
 //
 #if !defined PAWNRAKNET_INC_
     #error "A biblioteca `Pawn.RakNet` nao foi ativada. Por favor, ative-a no seu Gamemode, Ex: `#include <Pawn.RakNet>`"
 #endif
 //
-#if !defined gpci
+#if !defined gpci && !defined _INC_open_mp
     native gpci(playerid, buffer[], size = sizeof(buffer));
 #endif
 
@@ -118,7 +118,13 @@ public OnPlayerConnect(playerid)
 {
     new VPI_string[64];
     //
+    #if defined gpci && !defined _INC_open_mp
     gpci(playerid, VPI_string, sizeof VPI_string);
+    #endif
+    //
+    #if defined _INC_open_mp
+    GPCI(playerid, VPI_string, sizeof VPI_string);
+    #endif
     //
     if(!strcmp(VPI_string, VPI_chave_android))
         VPI_player_android[playerid][VPI_Android] = true;
@@ -179,11 +185,10 @@ $$ |   \$$$$$$  |$$ |  $$ |\$$$$$$$\ \$$$$$$  |\$$$$$$$\ $$$$$$$  |      $$ |   
 \__|    \______/ \__|  \__| \_______| \______/  \_______|\_______/       \__|      \__|    \______/ \__|  \__| \_______|   \____/ \__| \______/ \__|  \__|\_______/ 
 */
 
-stock bool:IsPlayerAndroid(playerid)
-    return VPI_player_android[playerid][VPI_Android];
-//
-stock bool:PlayerHasAutoAim(playerid)
-    return VPI_player_android[playerid][VPI_Mira_Automatica];
+stock GetPlayerPlataformInfo(playerid, &bool:mobile, &bool:aimlock) {
+    mobile = VPI_player_android[playerid][VPI_Android];
+    aimlock = VPI_player_android[playerid][VPI_Mira_Automatica];
+}
 
 /*
  $$$$$$\    $$\     $$\                                 $$$$$$$\             $$$$$$\  $$\           $$\   $$\     $$\                               

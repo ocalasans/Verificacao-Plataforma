@@ -1,6 +1,6 @@
 ## Include VerificacaoPlataforma SA:MP
 
-Este Ã© um include que tem a funÃ§Ã£o de verificar se o jogador estÃ¡ usando um `mobile` ou um `computador`. Leia as categorias abaixo para se manter informado.
+Este é um include que tem a função de verificar se o jogador está usando um `mobile` ou um `computador`. Leia as categorias abaixo para se manter informado.
 
 English > [README](https://github.com/ocalasans/Verificacao-Plataforma/blob/main/README.eng.md).
 
@@ -8,34 +8,37 @@ English > [README](https://github.com/ocalasans/Verificacao-Plataforma/blob/main
 
 ### Como instalar?
 
-VocÃª deve fazer o download do include. Depois de tÃª-lo feito, vocÃª deverÃ¡ colocar o include na pasta (pawno > include). ApÃ³s ter feito isso, abra o arquivo pwn do seu Gamemode e coloque o seguinte cÃ³digo abaixo dos seus outros includes:
+Você deve fazer o download do include. Depois de tê-lo feito, você deverá colocar o include na pasta (pawno > include). Após ter feito isso, abra o arquivo pwn do seu Gamemode e coloque o seguinte código abaixo dos seus outros includes:
 ```pawn
 #include <VerificacaoPlataforma>
 ```
 
 -----------------------
 
-### Include necessÃ¡ria
+### Include necessária
 
 * [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet).
 
 > [!WARNING]
-> Se o usuÃ¡rio nÃ£o tiver ativado a biblioteca [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet), receberÃ¡ um erro de nÃºmero `111`.
+> Se o usuário não tiver ativado a biblioteca [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet), receberá um erro de número `111`.
 
 -----------------------
 
 ### Como funciona?
 
-Assim que o jogador se conecta ao servidor, o include automaticamente verifica em qual plataforma ele estÃ¡, seja `mobile` ou `computador`, com a assistÃªncia do [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet). Para conferir a plataforma do jogador, basta utilizar a funÃ§Ã£o booleana `IsPlayerAndroid`. Abaixo, estÃ£o alguns exemplos:
+Assim que o jogador se conecta ao servidor, o include automaticamente verifica em qual plataforma ele está, seja `mobile` ou `computador`, com a assistência do [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet). Para conferir a plataforma do jogador, basta utilizar a função booleana `IsPlayerAndroid`. Abaixo, estão alguns exemplos:
 
 Com o `if`
 ```pawn
 CMD:plataforma(playerid)
 {
-    if(IsPlayerAndroid(playerid))
+    new bool:isAndroid, bool:haveAutoaim;
+    GetPlayerPlataformInfo(playerid, isAndroid, haveAutoaim);
+    //
+    if(isAndroid)
         SendClientMessage(playerid, 0xFFFFFFFF, "Voce esta conectado pela plataforma Mobile.");
     //
-    else if(!IsPlayerAndroid(playerid)) // Pode ser somente else.
+    else if(!isAndroid) // Pode ser somente else.
         SendClientMessage(playerid, 0xFFFFFFFF, "Voce esta conectado pela plataforma Computador.");
     //
     return true;
@@ -46,9 +49,10 @@ Sem o `if`
 ```pawn
 CMD:plataforma(playerid)
 {
-    new string[128];
+    new string[128], bool:isAndroid, bool:haveAutoaim;
+    GetPlayerPlataformInfo(playerid, isAndroid, haveAutoaim);
     //
-    format(string, sizeof(string), "Voce esta conectado pela plataforma %s.", IsPlayerAndroid(playerid) ? ("Mobile") : ("Computador"));
+    format(string, sizeof(string), "Voce esta conectado pela plataforma %s.", isAndroid ? ("Mobile") : ("Computador"));
     SendClientMessage(playerid, 0xFFFFFFFF, string);
     //
     return true;
@@ -57,16 +61,19 @@ CMD:plataforma(playerid)
 
 -----------------------
 
-Este include tambÃ©m possui uma funÃ§Ã£o chamada `PlayerHasAutoAim`. Essa funÃ§Ã£o consiste em verificar se o jogador estÃ¡ com mira automÃ¡tica ou se estÃ¡ sem a mira automÃ¡tica, conhecida como `LockOn`. Abaixo, estÃ£o alguns exemplos:
+Este include também possui uma função chamada `PlayerHasAutoAim`. Essa função consiste em verificar se o jogador está com mira automática ou se está sem a mira automática, conhecida como `LockOn`. Abaixo, estão alguns exemplos:
 
 Com o `if`
 ```pawn
 CMD:mira(playerid)
 {
-    if(PlayerHasAutoAim(playerid))
+    new bool:isAndroid, bool:haveAutoaim;
+    GetPlayerPlataformInfo(playerid, isAndroid, haveAutoaim);
+    //
+    if(haveAutoaim)
         SendClientMessage(playerid, 0xFFFFFFFF, "Sua mira automatica esta Ativada.");
     //
-    else if(!PlayerHasAutoAim(playerid)) // Pode ser somente else.
+    else if(!haveAutoaim) // Pode ser somente else.
         SendClientMessage(playerid, 0xFFFFFFFF, "Sua mira automatica esta Desativada.");
     //
     return true;
@@ -77,9 +84,9 @@ Sem o `if`
 ```pawn
 CMD:mira(playerid)
 {
-    new string[128];
+    new string[128], bool:isAndroid, bool:haveAutoaim;
     //
-    format(string, sizeof(string), "Sua mira automatica esta %s.", PlayerHasAutoAim(playerid) ? ("Ativada") : ("Desativada"));
+    format(string, sizeof(string), "Sua mira automatica esta %s.", haveAutoaim(playerid) ? ("Ativada") : ("Desativada"));
     SendClientMessage(playerid, 0xFFFFFFFF, string);
     //
     return true;
@@ -88,9 +95,9 @@ CMD:mira(playerid)
 
 -----------------------
 
-### InformaÃ§Ãµes de contato
+### Informações de contato
 
 Instagram: [ocalasans](https://instagram.com/ocalasans)   
 YouTube: [Calasans](https://www.youtube.com/@ocalasans)   
 Discord: ocalasans   
-Comunidade: [SA:MP Programming CommunityÂ©](https://abre.ai/samp-spc)
+Comunidade: [SA:MP Programming Community©](https://abre.ai/samp-spc)
