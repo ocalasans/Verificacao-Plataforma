@@ -30,10 +30,13 @@ With the `if`:
 ```pawn
 CMD:platform(playerid)
 {
-    if(IsPlayerAndroid(playerid))
+    new bool:isAndroid, bool:haveAutoaim;
+    GetPlayerPlataformInfo(playerid, isAndroid, haveAutoaim);
+    //
+    if(isAndroid)
         SendClientMessage(playerid, 0xFFFFFFFF, "You are connected via the Mobile platform.");
     //
-    else if(!IsPlayerAndroid(playerid)) // Could be just else.
+    else if(!isAndroid) // Could be just else.
         SendClientMessage(playerid, 0xFFFFFFFF, "You are connected via the Computer platform.");
     //
     return true;
@@ -44,7 +47,8 @@ Without the `if`:
 ```pawn
 CMD:platform(playerid)
 {
-    new string[128];
+    new string[128], bool:isAndroid, bool:haveAutoaim;
+    GetPlayerPlataformInfo(playerid, isAndroid, haveAutoaim);
     //
     format(string, sizeof(string), "You are connected via the %s platform.", IsPlayerAndroid(playerid) ? ("Mobile") : ("Computer"));
     SendClientMessage(playerid, 0xFFFFFFFF, string);
@@ -61,10 +65,13 @@ With the `if`:
 ```pawn
 CMD:aim(playerid)
 {
-    if(PlayerHasAutoAim(playerid))
+    new bool:isAndroid, bool:haveAutoaim;
+    GetPlayerPlataformInfo(playerid, isAndroid, haveAutoaim);
+    //
+    if(haveAutoaim)
         SendClientMessage(playerid, 0xFFFFFFFF, "Your auto-aim is Enabled.");
     //
-    else if(!PlayerHasAutoAim(playerid)) // Could be just else.
+    else if(!haveAutoaim) // Could be just else.
         SendClientMessage(playerid, 0xFFFFFFFF, "Your auto-aim is Disabled.");
     //
     return true;
@@ -75,9 +82,10 @@ Without the `if`:
 ```pawn
 CMD:aim(playerid)
 {
-    new string[128];
+    new string[128], bool:isAndroid, bool:haveAutoaim;
+    GetPlayerPlataformInfo(playerid, isAndroid, haveAutoaim);
     //
-    format(string, sizeof(string), "Your auto-aim is %s.", PlayerHasAutoAim(playerid) ? ("Enabled") : ("Disabled"));
+    format(string, sizeof(string), "Your auto-aim is %s.", haveAutoaim ? ("Enabled") : ("Disabled"));
     SendClientMessage(playerid, 0xFFFFFFFF, string);
     //
     return true;
