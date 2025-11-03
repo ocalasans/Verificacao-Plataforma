@@ -1,6 +1,6 @@
 ## Include VerificacaoPlataforma SA:MP
 
-Este È um include que tem a funÁ„o de verificar se o jogador est· usando um `mobile` ou um `computador`. Leia as categorias abaixo para se manter informado.
+Este √© um include que tem a fun√ß√£o de verificar se o jogador est√° usando um `mobile` ou um `computador`. Leia as categorias abaixo para se manter informado.
 
 English > [README](https://github.com/ocalasans/Verificacao-Plataforma/blob/main/README.eng.md).
 
@@ -8,25 +8,25 @@ English > [README](https://github.com/ocalasans/Verificacao-Plataforma/blob/main
 
 ### Como instalar?
 
-VocÍ deve fazer o download do include. Depois de tÍ-lo feito, vocÍ dever· colocar o include na pasta (pawno > include). ApÛs ter feito isso, abra o arquivo pwn do seu Gamemode e coloque o seguinte cÛdigo abaixo dos seus outros includes:
+Voc√™ deve fazer o download do include. Depois de t√™-lo feito, voc√™ dever√° colocar o include na pasta (pawno > include). Ap√≥s ter feito isso, abra o arquivo pwn do seu Gamemode e coloque o seguinte c√≥digo abaixo dos seus outros includes:
 ```pawn
 #include <VerificacaoPlataforma>
 ```
 
 -----------------------
 
-### Include necess·ria
+### Include necess√°ria
 
 * [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet).
 
 > [!WARNING]
-> Se o usu·rio n„o tiver ativado a biblioteca [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet), receber· um erro de n˙mero `111`.
+> Se o usu√°rio n√£o tiver ativado a biblioteca [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet), receber√° um erro de n√∫mero `111`.
 
 -----------------------
 
 ### Como funciona?
 
-Assim que o jogador se conecta ao servidor, o include automaticamente verifica em qual plataforma ele est·, seja `mobile` ou `computador`, com a assistÍncia do [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet). Para conferir a plataforma do jogador, basta utilizar a funÁ„o booleana `IsPlayerAndroid`. Abaixo, est„o alguns exemplos:
+Assim que o jogador se conecta ao servidor, o include automaticamente verifica em qual plataforma ele est√°, seja `mobile` ou `computador`, com a assist√™ncia do [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet). Para conferir a plataforma do jogador, basta utilizar a fun√ß√£o booleana `IsPlayerAndroid`. Abaixo, est√£o alguns exemplos:
 
 Com o `if`
 ```pawn
@@ -61,7 +61,7 @@ CMD:plataforma(playerid)
 
 -----------------------
 
-Este include tambÈm possui uma funÁ„o chamada `PlayerHasAutoAim`. Essa funÁ„o consiste em verificar se o jogador est· com mira autom·tica ou se est· sem a mira autom·tica, conhecida como `LockOn`. Abaixo, est„o alguns exemplos:
+Este include tamb√©m possui uma fun√ß√£o chamada `PlayerHasAutoAim`. Essa fun√ß√£o consiste em verificar se o jogador est√° com mira autom√°tica ou se est√° sem a mira autom√°tica, conhecida como `LockOn`. Abaixo, est√£o alguns exemplos:
 
 Com o `if`
 ```pawn
@@ -95,9 +95,8 @@ CMD:mira(playerid)
 
 -----------------------
 
-### InformaÁıes de contato
+### Informa√ß√µes de contato
 
 Instagram: [ocalasans](https://instagram.com/ocalasans)   
 YouTube: [Calasans](https://www.youtube.com/@ocalasans)   
-Discord: ocalasans   
-Comunidade: [SA:MP Programming Community©](https://abre.ai/samp-spc)
+Discord: ocalasans
